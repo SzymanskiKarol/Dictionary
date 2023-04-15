@@ -36,8 +36,8 @@ export const Word = ({ wordData }) => {
 							);
 						})}
 						{m.synonyms && (
-							<div className="synonyms">
-								{m.synonyms.lenght > 0 && <h3>Synonyms</h3>}
+							<div className="synonyms-container">
+								{<h3>Synonyms</h3>}
 								{m.synonyms.map((s) => {
 									return <p className="synonyms">{s}</p>;
 								})}
