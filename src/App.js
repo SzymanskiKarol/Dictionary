@@ -9,7 +9,7 @@ import { useQuery } from '@tanstack/react-query';
 function App() {
   const [searchWord, setSearchWord] = useState("");
   const [activeFont, setActiveFont] = useState("Serif");
-  const [theme, setTheme] = useState(false);
+  const [theme, setTheme] = useState(window.matchMedia('(prefers-color-scheme: dark)').matches);
 
 
   const fetchData = async () => {
