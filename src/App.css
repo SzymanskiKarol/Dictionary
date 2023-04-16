@@ -25,14 +25,38 @@
   --bg: var(--white);
 }
 
+body {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.App {
+  width: 768px;
+  padding: 2rem 3rem;
+  overflow: hidden;
+}
+
+.container {
+  color: var(--text-1);
+  background-color: var(--bg);
+  font-size: .875rem;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+/* --------DARK THEME STYLES------------ */
 .Dark {
   --text-1: var(--white);
   --text-2: var(--light-gray);
-  /* --text-3: var(--light-violet); */
   --input: var(--dark-gray);
   --bg: var(--black);
 }
 
+/* --------FONTS/FONT CHANGER------------ */
 .font-changer {
   background-color: var(--bg);
   width: 150px;
@@ -40,7 +64,6 @@
   outline: transparent;
   text-align: "right";
 }
-
 
 .Serif {
   font-family: 'Roboto Slab', serif;
@@ -55,33 +78,8 @@
 }
 
 
-body {
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
 
-.App {
-  width: 768px;
-  padding: 2rem 3rem;
-  overflow: hidden;
-}
-
-
-
-.container {
-  color: var(--text-1);
-  background-color: var(--bg);
-  font-size: .875rem;
-  min-height: 100vh;
-  min-width: 100vw;
-  display: flex;
-  justify-content: center;
-
-}
-
-/* Navbar */
+/* --------NAVBAR---------- */
 
 nav {
   display: flex;
@@ -95,7 +93,13 @@ nav {
   gap: 1rem;
 }
 
+.dark-mode {
+  gap: .5rem;
+  display: flex;
+}
 
+
+/* ---------SEARCH BAR------------ */
 .input {
   position: relative;
 }
@@ -129,11 +133,6 @@ nav {
   align-items: center;
 }
 
-.dark-mode {
-  gap: .5rem;
-  display: flex;
-}
-
 .loader {
   width: 48px;
   height: 48px;
@@ -154,6 +153,7 @@ nav {
     transform: rotate(360deg);
   }
 }
+
 
 h1 {
   font-size: 3.5rem;
@@ -206,22 +206,6 @@ li {
   padding: .25rem 0;
 }
 
-.definitions p {
-  padding-left: 1.5rem;
-}
-
-.synonyms-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-}
-
-.synonyms {
-  padding-left: 5px;
-  font-weight: 700;
-  color: var(--text-3);
-}
-
 .word-top-left p {
   color: var(--text-3);
   font-weight: 700;
@@ -244,13 +228,35 @@ li {
   transform: scale(1.1);
 }
 
+.definitions p {
+  padding-left: 1.5rem;
+}
+
+.synonyms-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.synonyms {
+  padding-left: 5px;
+  font-weight: 700;
+  color: var(--text-3);
+}
+
+
 hr {
   margin: 1.5rem 0 .5rem 0;
   font-size: 1px;
   opacity: 0.5;
 }
 
+.source {
+  display: flex;
+  gap: 20px;
+}
 
+/* -----------------MEDIA QUERIES--------------- */
 @media (max-width: 800px) {
   .App {
     width: 100vw;

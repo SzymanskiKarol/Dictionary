@@ -3,7 +3,7 @@ import PlayIcon from "../assets/icon-play.svg";
 import NewWindowIcon from "../assets/icon-new-window.svg";
 
 export const Word = ({ wordData }) => {
-	let audio = new Audio(wordData?.phonetics[0].audio);
+	let audio = new Audio(wordData?.phonetics[0]?.audio);
 	return (
 		<div className="word-container">
 			<div className="word-top">
@@ -12,14 +12,16 @@ export const Word = ({ wordData }) => {
 					<p>{wordData?.phonetic}</p>
 				</div>
 				<div className="word-top-right">
-					<button
-						className="play-btn"
-						onClick={() => audio.play()}>
-						<img
-							src={PlayIcon}
-							alt="P"
-						/>
-					</button>
+					{wordData?.phonetics[0]?.audio && (
+						<button
+							className="play-btn"
+							onClick={() => audio.play()}>
+							<img
+								src={PlayIcon}
+								alt="P"
+							/>
+						</button>
+					)}
 				</div>
 			</div>
 			{wordData?.meanings.map((m) => {
@@ -35,11 +37,11 @@ export const Word = ({ wordData }) => {
 								</ul>
 							);
 						})}
-						{m.synonyms && (
+						{m.synonyms.length > 0 && (
 							<div className="synonyms-container">
 								{<h3>Synonyms</h3>}
 								{m.synonyms.map((s) => {
-									return <p className="synonyms">{s}</p>;
+									return <p className="synonyms">{s},</p>;
 								})}
 							</div>
 						)}
