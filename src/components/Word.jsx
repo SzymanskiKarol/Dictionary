@@ -1,9 +1,9 @@
-import React from "react";
-import PlayIcon from "../assets/icon-play.svg";
-import NewWindowIcon from "../assets/icon-new-window.svg";
+import React from "react"
+import PlayIcon from "../assets/icon-play.svg"
+import NewWindowIcon from "../assets/icon-new-window.svg"
 
 export const Word = ({ wordData }) => {
-	let audio = new Audio(wordData?.phonetics[0]?.audio);
+	const audio = new Audio(wordData?.phonetics[0]?.audio)
 	return (
 		<div className="word-container">
 			<div className="word-top">
@@ -15,10 +15,11 @@ export const Word = ({ wordData }) => {
 					{wordData?.phonetics[0]?.audio && (
 						<button
 							className="play-btn"
-							onClick={() => audio.play()}>
+							onClick={() => audio.play()}
+						>
 							<img
 								src={PlayIcon}
-								alt="P"
+								alt="Play audio"
 							/>
 						</button>
 					)}
@@ -35,30 +36,30 @@ export const Word = ({ wordData }) => {
 									<li>{d.definition}</li>
 									<p>{d.example}</p>
 								</ul>
-							);
+							)
 						})}
 						{m.synonyms.length > 0 && (
 							<div className="synonyms-container">
 								{<h3>Synonyms</h3>}
 								{m.synonyms.map((s) => {
-									return <p className="synonyms">{s},</p>;
+									return <p className="synonyms">{s},</p>
 								})}
 							</div>
 						)}
 					</div>
-				);
+				)
 			})}
 			<hr />
 			<div className="source">
 				<p>Source</p>
 				<a href={wordData?.sourceUrls[0]}>
-					{wordData?.sourceUrls[0]}{" "}
+					{wordData?.sourceUrls[0]}
 					<img
 						src={NewWindowIcon}
-						alt=""
+						alt="Link to wiktionary"
 					/>
 				</a>
 			</div>
 		</div>
-	);
-};
+	)
+}
